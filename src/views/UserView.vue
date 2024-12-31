@@ -11,33 +11,27 @@
 </template>
 
 <script>
-import axios from "axios"
+import { mapGetters, mapActions } from "vuex"
 
 export default {
   name: "UserView",
-  data() {
-    return {
-      user: null,
-    }
-  },
   props: {
     userId: { type: Number, required: true },
   },
   watch: {
     $route(to, from) {
-      this.init(to.params.id)
+      this.getUser({ userId: to.params.id })
     },
+  },
+  computed: {
+    ...mapGetters(["user"]),
   },
   methods: {
-    async init(userId) {
-      const response = await axios.get(
-        `https:/dummyjson.com/user/${this.userId}`,
-      )
-      this.user = response.data
-    },
+    ...mapActions(["getUser"]),
   },
   created() {
-    this.init(this.userId)
+    this.getUser({ userId: this.userId })
+    console.log(this.user)
   },
 }
 </script>
