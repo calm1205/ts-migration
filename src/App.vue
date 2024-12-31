@@ -3,9 +3,12 @@
     <template #sidebar>
       <AppSidebar
         :menus="[
-          { title: 'Menu 1', items: ['Item 1', 'Item 2', 'Item 3'] },
-          { title: 'Menu 2', items: ['Item 1', 'Item 2', 'Item 3'] },
-          { title: 'Menu 3', items: ['Item 1', 'Item 2', 'Item 3'] },
+          {
+            title: 'user',
+            items: ['User 1', 'User 2', 'User 3', 'User 4', 'User 5'],
+          },
+          { title: 'dummy', items: ['Item 1', 'Item 2', 'Item 3'] },
+          { title: 'dummy', items: ['Item 1', 'Item 2', 'Item 3'] },
         ]"
       />
     </template>

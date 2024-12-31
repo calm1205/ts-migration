@@ -1,13 +1,13 @@
 <template>
   <h2>Dummy View</h2>
-  <div>{{ index }}</div>
+  <div>{{ id }}</div>
 </template>
 
 <script>
 export default {
   name: "DummyView",
   props: {
-    index: { type: Number, required: false },
+    id: { type: Number, required: false },
   },
 }
 </script>

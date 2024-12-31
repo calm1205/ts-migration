@@ -15,7 +15,7 @@
 
         <router-link
           v-for="(item, index) in menu.items"
-          :to="{ name: 'dummy', params: { index } }"
+          :to="{ name: menu.title, params: { id: index + 1 } }"
           :key="item"
         >
           <span>{{ item }}</span>
