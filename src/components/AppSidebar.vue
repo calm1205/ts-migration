@@ -30,6 +30,19 @@
 <script>
 import VueIcon from "@/components/VueIcon.vue"
 
+/**
+ * @typedef {Object} Menu
+ * @property {string} title
+ * @property {string} path
+ * @property {MenuItem[]} items
+ */
+
+/**
+ * @typedef {Object} MenuItem
+ * @property {string} title
+ * @property {string} path
+ */
+
 export default {
   name: "AppSidebar",
   components: {
@@ -37,7 +50,7 @@ export default {
   },
   props: {
     /**
-     * @type {{title: string, path: string, items: {title: string, path: string}[]}[]}
+     * @type {Menu[]}
      */
     menus: { type: Array, required: true },
   },
