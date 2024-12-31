@@ -1,17 +1,25 @@
 import { createWebHistory, createRouter } from "vue-router"
 import MainView from "@/views/MainView.vue"
+import DummiesView from "@/views/DummiesView.vue"
 import DummyView from "@/views/DummyView.vue"
 import UserView from "@/views/UserView.vue"
+import UsersView from "@/views/UsersView.vue"
 import NotFoundView from "@/views/NotFoundView.vue"
 
 const routes = [
   { name: "main", path: "/", component: MainView },
+  {
+    name: "dummies",
+    path: `/dummies`,
+    component: DummiesView,
+  },
   {
     name: "dummy",
     path: `/dummy/:id`,
     component: DummyView,
     props: (route) => ({ id: Number(route.params.id) }),
   },
+  { name: "users", component: UsersView, path: "/users" },
   {
     name: "user",
     path: `/user/:id`,

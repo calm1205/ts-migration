@@ -5,10 +5,22 @@
         :menus="[
           {
             title: 'user',
-            items: ['User 1', 'User 2', 'User 3', 'User 4', 'User 5'],
+            path: 'users',
+            items: [
+              { title: 'User 1', path: 'user' },
+              { title: 'User 2', path: 'user' },
+              { title: 'User 3', path: 'user' },
+            ],
           },
-          { title: 'dummy', items: ['Item 1', 'Item 2', 'Item 3'] },
-          { title: 'dummy', items: ['Item 1', 'Item 2', 'Item 3'] },
+          {
+            title: 'dummy',
+            path: 'dummies',
+            items: [
+              { title: 'Dummy 1', path: 'dummy' },
+              { title: 'Dummy 2', path: 'dummy' },
+              { title: 'Dummy 3', path: 'dummy' },
+            ],
+          },
         ]"
       />
     </template>

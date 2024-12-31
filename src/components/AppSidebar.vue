@@ -11,14 +11,16 @@
       <div class="menu" v-for="menu in menus" :key="menu.title">
         <div class="menu__divider"></div>
 
-        <p class="menu__title">{{ menu.title }}</p>
+        <router-link :to="{ name: menu.path }">
+          <p class="menu__title">{{ menu.title }}</p>
+        </router-link>
 
         <router-link
           v-for="(item, index) in menu.items"
-          :to="{ name: menu.title, params: { id: index + 1 } }"
+          :to="{ name: item.path, params: { id: index + 1 } }"
           :key="item"
         >
-          <span>{{ item }}</span>
+          <span>{{ item.title }}</span>
         </router-link>
       </div>
     </div>
@@ -35,7 +37,7 @@ export default {
   },
   props: {
     /**
-     * @type {{title: string, items: string[]}[]}
+     * @type {{title: string, path: string, items: {title: string, path: string}[]}[]}
      */
     menus: { type: Array, required: true },
   },
@@ -67,6 +69,7 @@ export default {
   gap: 10px;
 }
 .menu__title {
+  color: white;
   font-weight: bold;
 }
 .menu__divider {
