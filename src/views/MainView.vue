@@ -2,9 +2,8 @@
   <h2>hello world</h2>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "MainView",
-  components: {},
 }
 </script>

@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router"
+import { createWebHistory, createRouter, RouteRecordRaw } from "vue-router"
 import MainView from "@/views/MainView.vue"
 import DummiesView from "@/views/DummiesView.vue"
 import DummyView from "@/views/DummyView.vue"
@@ -8,7 +8,7 @@ import TaskView from "@/views/TaskView.vue"
 import TasksView from "@/views/TasksView.vue"
 import NotFoundView from "@/views/NotFoundView.vue"
 
-const routes = [
+const routes: Readonly<RouteRecordRaw[]> = [
   { name: "main", path: "/", component: MainView },
   {
     name: "dummies",
