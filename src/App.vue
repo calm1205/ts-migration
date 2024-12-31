@@ -1,30 +1,31 @@
-<script setup>
-import HelloWorld from "./components/HelloWorld.vue"
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <AppLayout>
+    <template #sidebar>
+      <AppSidebar
+        :menus="[
+          { title: 'Menu 1', items: ['Item 1', 'Item 2', 'Item 3'] },
+          { title: 'Menu 2', items: ['Item 1', 'Item 2', 'Item 3'] },
+          { title: 'Menu 3', items: ['Item 1', 'Item 2', 'Item 3'] },
+        ]"
+      />
+    </template>
+    <template #header>
+      <AppHeader />
+    </template>
+  </AppLayout>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script>
+import AppLayout from "@/components/AppLayout.vue"
+import AppSidebar from "@/components/AppSidebar.vue"
+import AppHeader from "@/components/AppHeader.vue"
+
+export default {
+  name: "App",
+  components: {
+    AppLayout,
+    AppSidebar,
+    AppHeader,
+  },
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+</script>
