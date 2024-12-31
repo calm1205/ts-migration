@@ -31,7 +31,6 @@ export default {
   },
   created() {
     this.getUser({ userId: this.userId })
-    console.log(this.user)
   },
 }
 </script>

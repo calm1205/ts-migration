@@ -6,23 +6,18 @@
 </template>
 
 <script>
-import axios from "axios"
+import { mapGetters, mapActions } from "vuex"
 
 export default {
   name: "UsersView",
-  data() {
-    return {
-      users: [],
-    }
+  computed: {
+    ...mapGetters(["users"]),
   },
   methods: {
-    async fetchUsers() {
-      const response = await axios.get("https://dummyjson.com/users")
-      this.users = response.data.users
-    },
+    ...mapActions(["getUsers"]),
   },
   created() {
-    this.fetchUsers()
+    this.getUsers()
   },
 }
 </script>
