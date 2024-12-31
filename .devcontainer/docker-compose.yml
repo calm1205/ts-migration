@@ -1,0 +1,13 @@
+services:
+  node:
+    image: ts-migration:dev
+    container_name: node
+    build: .
+    volumes:
+      - ..:/workspaces:cached
+      - vscode_server_volume:/root/.vscode-server
+    command: sleep infinity
+
+volumes:
+  vscode_server_volume:
+    driver: local
