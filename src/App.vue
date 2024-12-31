@@ -13,6 +13,15 @@
             ],
           },
           {
+            title: 'task',
+            path: 'tasks',
+            items: [
+              { title: 'Task 1', path: 'task' },
+              { title: 'Task 2', path: 'task' },
+              { title: 'Task 3', path: 'task' },
+            ],
+          },
+          {
             title: 'dummy',
             path: 'dummies',
             items: [
